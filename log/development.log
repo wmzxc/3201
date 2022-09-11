@@ -54350,3 +54350,168 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 35ms (Views: 15.7ms | ActiveRecord: 12.8ms | Allocations: 20098)
 
 
+Started GET "/" for 127.0.0.1 at 2022-06-26 23:39:44 +0900
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.0ms | Allocations: 6291)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-06-26 23:39:44 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 891)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 4912)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 11125)
+Completed 200 OK in 42ms (Views: 23.3ms | ActiveRecord: 7.0ms | Allocations: 28194)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-06-26 23:39:52 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user000", "fullname"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "user000"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 310ms (ActiveRecord: 2.6ms | Allocations: 7425)
+
+
+Started GET "/" for 127.0.0.1 at 2022-06-26 23:39:53 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 1363)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-06-26 23:39:53 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."role" = $1[0m  [["role", "student"]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY created_at desc[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:21
+  Rendered users/show.html.erb within layouts/application (Duration: 14.9ms | Allocations: 10822)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 16340)
+Completed 200 OK in 31ms (Views: 15.4ms | ActiveRecord: 9.1ms | Allocations: 21932)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-07 13:43:06 +0900
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 8ms (ActiveRecord: 0.0ms | Allocations: 5500)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-09-07 13:43:06 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 891)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 16.9ms | Allocations: 4226)
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 10439)
+Completed 200 OK in 56ms (Views: 29.0ms | ActiveRecord: 15.2ms | Allocations: 26327)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-09-07 13:43:18 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user000", "fullname"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "user000"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 305ms (ActiveRecord: 4.2ms | Allocations: 4239)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user000", "fullname"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+[31mUnpermitted parameter: :fullname. Context: { controller: Devise::SessionsController, action: new, request: #<ActionDispatch::Request:0x00007fb439d36e28>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user000", "fullname"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン", "controller"=>"devise/sessions", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 183)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1565)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 7210)
+Completed 200 OK in 267ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 7864)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-09-07 13:43:29 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user001", "fullname"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "user001"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 301ms (ActiveRecord: 0.7ms | Allocations: 1466)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user001", "fullname"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+[31mUnpermitted parameter: :fullname. Context: { controller: Devise::SessionsController, action: new, request: #<ActionDispatch::Request:0x00007fb439b1c8e0>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user001", "fullname"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン", "controller"=>"devise/sessions", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 183)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1557)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 7252)
+Completed 200 OK in 269ms (Views: 10.3ms | ActiveRecord: 0.0ms | Allocations: 7895)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-09-07 13:43:32 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user001", "fullname"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 386)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user001", "fullname"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+[31mUnpermitted parameter: :fullname. Context: { controller: Devise::SessionsController, action: new, request: #<ActionDispatch::Request:0x00007fb439964700>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user001", "fullname"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン", "controller"=>"devise/sessions", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 183)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1557)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 7254)
+Completed 200 OK in 22ms (Views: 19.3ms | ActiveRecord: 0.0ms | Allocations: 7860)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-07 15:41:35 +0900
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 11ms (ActiveRecord: 0.0ms | Allocations: 8348)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-09-07 15:41:35 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.0ms | Allocations: 891)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 4225)
+  Rendered layout layouts/application.html.erb (Duration: 26.3ms | Allocations: 10438)
+Completed 200 OK in 52ms (Views: 30.4ms | ActiveRecord: 8.9ms | Allocations: 26349)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-09-07 15:41:40 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user000", "fullname"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "user000"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 300ms (ActiveRecord: 2.0ms | Allocations: 6027)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-07 15:41:41 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms | Allocations: 1386)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-09-07 15:41:41 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."role" = $1[0m  [["role", "student"]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mPost Load (6.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY created_at desc[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:21
+  Rendered users/show.html.erb within layouts/application (Duration: 19.4ms | Allocations: 10748)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 16266)
+Completed 200 OK in 34ms (Views: 15.2ms | ActiveRecord: 13.0ms | Allocations: 21502)
+
+

@@ -1,0 +1,15 @@
+current directory: /Users/macbookprohiroko/3201/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.12.0/ext/bootsnap
+/Users/macbookprohiroko/.rbenv/versions/2.7.5/bin/ruby -I /Users/macbookprohiroko/.rbenv/versions/2.7.5/lib/ruby/2.7.0 -r ./siteconf20220626-34460-1gxx73u.rb extconf.rb
+creating Makefile
+
+current directory: /Users/macbookprohiroko/3201/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.12.0/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/macbookprohiroko/3201/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.12.0/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/macbookprohiroko/3201/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.12.0/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20220626-34460-11576dq/bootsnap
